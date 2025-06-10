@@ -17,7 +17,7 @@ public class ConnectionService {
 			
 			//*****************************************************************
 			// 2단계 1. db.properties 파일경로를 가져온다.
-			String filepath = "D:/javaWorkspace/ch20/src/config/db.properties";
+			String filepath = "D:/javaWorkspace/studentManager/src/config/db.properties";
 			// 2단계 2. properties 객체를 만든다.
 			Properties properties = new Properties();
 			// 2단계 3. properties 객체에 해당된 파일을 로드한다.

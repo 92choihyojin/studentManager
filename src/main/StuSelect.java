@@ -51,7 +51,7 @@ public class StuSelect {
 					break;
 				}
 			} catch (Exception e) {
-				System.out.println("발생");
+				System.out.println("예외 발생");
 			}
 		}
 	}

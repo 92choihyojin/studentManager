@@ -11,6 +11,8 @@ import dao.StudentDAO;
 
 public class StuInterfaceImpl implements StuInterface {
 	
+	
+	//학생 불러오기
 	public ArrayList<StudentDAO> selectStuAll(Connection conn) {
 		ArrayList<StudentDAO> studentDAOList = null;
 		try {
@@ -63,10 +65,8 @@ public class StuInterfaceImpl implements StuInterface {
 		try {
 			String selectSQL = "SELECT * FROM STUDENT WHERE NUM = ?";
 			PreparedStatement pstmt = conn.prepareStatement(selectSQL);
-			// 5. 사람을(DML) 탑승시켜 보내고, 오라클에서 실행(executeQuery)시키고 , 실행된 사람 다시 태우고 도착한다.
 			pstmt.setString(1, i_num);
 			ResultSet rs = pstmt.executeQuery();
-			// 6. collecction framework (data class) 맘대로 할수있다
 			
 			studentDAO = new StudentDAO();
 			while(rs.next()) {
@@ -98,9 +98,7 @@ public class StuInterfaceImpl implements StuInterface {
 			String selectSQL = "SELECT NVL(LPAD(COUNT(*)+1,4,0), 0001) AS CNT FROM STUDENT WHERE LESSON_NO = ?";
 			PreparedStatement pstmt = conn.prepareStatement(selectSQL);
 			pstmt.setInt(1, no);
-			// 5. 사람을(DML) 탑승시켜 보내고, 오라클에서 실행(executeQuery)시키고 , 실행된 사람 다시 태우고 도착한다.
 			ResultSet rs = pstmt.executeQuery();
-			// 6. collecction framework (data class) 맘대로 할수있다
 			
 			while(rs.next()) {
 				String cnt = rs.getString("CNT");
@@ -112,14 +110,14 @@ public class StuInterfaceImpl implements StuInterface {
 		}
 		return null;
 	}
+	
+	//학생 아이디 체크
 	public boolean selectByIdCheck(Connection conn, String id) {
 		try {
 			String selectSQL = "SELECT COUNT(*) AS CNT FROM STUDENT WHERE ID = ?";
 			PreparedStatement pstmt = conn.prepareStatement(selectSQL);
 			pstmt.setString(1, id);
-			// 5. 사람을(DML) 탑승시켜 보내고, 오라클에서 실행(executeQuery)시키고 , 실행된 사람 다시 태우고 도착한다.
 			ResultSet rs = pstmt.executeQuery();
-			// 6. collecction framework (data class) 맘대로 할수있다
 			
 			while(rs.next()) {
 				int cnt = rs.getInt("CNT");
@@ -131,15 +129,16 @@ public class StuInterfaceImpl implements StuInterface {
 			}
 			
 		} catch (SQLException e) {
-			System.out.println("createStatment 생성실패");
+			System.out.println("학생 ID Check 실패");
 		}
 		return false;
 	}
+	
+	//학생 등록
 	public boolean insert(Connection conn, StudentDAO dao) {
 		try {
 			String insertSQL = "INSERT INTO STUDENT VALUES (STUDENT_SEQ.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, sysdate )";
 			PreparedStatement pstmt = conn.prepareStatement(insertSQL);
-			// 5. 사람을(DML) 탑승시켜 보내고, 오라클에서 실행(executeQuery)시키고 , 실행된 사람 다시 태우고 도착한다.
 			pstmt.setString(1, dao.getNum());
 			pstmt.setString(2, dao.getName());
 			pstmt.setString(3, dao.getId());
@@ -157,16 +156,17 @@ public class StuInterfaceImpl implements StuInterface {
 				return false;
 			}
 		} catch (SQLException e) {
-			System.out.println("등록 실패");
+			System.out.println("학생 등록(insert) 실패");
 			e.printStackTrace();			
 		}
 		return false;
 	}
+	
+	//학생 수정
 	public boolean update(Connection conn, StudentDAO dao) {
 		try {
 			String updateSQL = "UPDATE STUDENT SET NAME = ?, ID = ?, PHONE = ?, EMAIL = ? WHERE NUM = ?";
 			PreparedStatement pstmt = conn.prepareStatement(updateSQL);
-			// 5. 사람을(DML) 탑승시켜 보내고, 오라클에서 실행(executeQuery)시키고 , 실행된 사람 다시 태우고 도착한다.
 			
 			pstmt.setString(1, dao.getName());
 			pstmt.setString(2, dao.getId());
@@ -181,16 +181,17 @@ public class StuInterfaceImpl implements StuInterface {
 				return false;
 			}
 		} catch (SQLException e) {
-			System.out.println("등록 실패");
+			System.out.println("학생 수정(update) 실패");
 			e.printStackTrace();			
 		}
 		return false;
 	}
+	
+	//학생 삭제
 	public boolean delete(Connection conn, StudentDAO dao) {
 		try {
 			String deleteSQL = "DELETE STUDENT WHERE NUM = ?";
 			PreparedStatement pstmt = conn.prepareStatement(deleteSQL);
-			// 5. 사람을(DML) 탑승시켜 보내고, 오라클에서 실행(executeQuery)시키고 , 실행된 사람 다시 태우고 도착한다.
 			pstmt.setString(1, dao.getNum());
 			
 			int rc = pstmt.executeUpdate();
@@ -200,11 +201,13 @@ public class StuInterfaceImpl implements StuInterface {
 				return false;
 			}
 		} catch (SQLException e) {
-			System.out.println("등록 실패");
+			System.out.println("학생 삭제(delete) 실패");
 			e.printStackTrace();			
 		}
 		return false;
 	}
+	
+	//학생검색
 	public ArrayList<StudentDAO> searchByName(Connection conn, String i_name) {
 		ArrayList<StudentDAO> studentDAOList = null;
 		try {
@@ -221,13 +224,11 @@ public class StuInterfaceImpl implements StuInterface {
 					+ "    s.ADDRESS AS ADDRESS,\r\n"
 					+ "    s.EMAIL AS EMAIL,\r\n"
 					+ "    s.REGISTER_DATE AS REGISTER_DATE \r\n"
-					+ "FROM STUDENT s,LESSON l WHERE s.LESSON_NO = l.NO"
-					+ "AND NAME LIKE '%'||?||'%'";
+					+ "FROM STUDENT s, LESSON l WHERE s.LESSON_NO = l.NO \r\n"
+					+ "AND s.NAME LIKE '%'||?||'%'";
 			PreparedStatement pstmt = conn.prepareStatement(selectSQL);
-			// 5. 사람을(DML) 탑승시켜 보내고, 오라클에서 실행(executeQuery)시키고 , 실행된 사람 다시 태우고 도착한다.
 			pstmt.setString(1, i_name);
 			ResultSet rs = pstmt.executeQuery();
-			// 6. collecction framework (data class) 맘대로 할수있다
 			
 			studentDAOList = new ArrayList<StudentDAO>();
 			while(rs.next()) {
@@ -250,7 +251,7 @@ public class StuInterfaceImpl implements StuInterface {
 			}
 			
 		} catch (SQLException e) {
-			System.out.println("createStatment 생성실패");
+			System.out.println("학생 검색(search) 실패");
 		}
 		return studentDAOList;
 	}

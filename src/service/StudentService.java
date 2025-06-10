@@ -13,17 +13,14 @@ import dao.StudentDAO;
 import inter.StuInterfaceImpl;
 
 public class StudentService {
-	public static ArrayList<StudentDAO> selectStuAll(Connection conn) {
+	public ArrayList<StudentDAO> selectStuAll(Connection conn) {
 		return new StuInterfaceImpl().selectStuAll(conn);
 	}
-	
-	public static StudentDAO selectStuOne(Connection conn, String num) {
+	public StudentDAO selectStuOne(Connection conn, String num) {
 		return new StuInterfaceImpl().selectStuOne(conn, num);
 	}
-	
 	public String selectByLessonNoCount(Connection conn, int no) {
 		return new StuInterfaceImpl().selectByLessonNoCount(conn, no);
-	
 	}
 	public boolean selectByIdCheck(Connection conn, String id) {
 		return new StuInterfaceImpl().selectByIdCheck(conn, id);
