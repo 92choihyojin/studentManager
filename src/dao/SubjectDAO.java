@@ -2,9 +2,10 @@ package dao;
 
 public class SubjectDAO {
 	
-	private int no;
-	private String num;
-	private String name;
+	private int no; //일련번호
+	private String num; //과목번호
+	private String name; //과목명
+	
 	public SubjectDAO() {
 		super();
 	}
