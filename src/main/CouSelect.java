@@ -4,27 +4,40 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import MenuView.StudentMainMenu;
-import ViewChoice.RegChoice;
+import ViewChoice.CouChoice;
 import ViewChoice.StuChoice;
+import controller.CouseController;
 
-public class RegSelect {
+public class CouSelect {
 	public static Scanner scan = new Scanner(System.in);
 	public static void menuChoiceReg() {
 		
         int choice = 0;
         boolean stopFlag = false; 
+        
         while(!stopFlag) {
         	try {
         		StudentMainMenu.menuShowMeReg();
-        		choice = noSel(6);
+        		
+        		CouseController cc = new CouseController();
+        		
+        		choice = noSel(5);
+        		
                 switch(choice) {
-                case RegChoice.수강_신청_목록: 
+                
+                case CouChoice.수강_신청_목록: 
+                	cc.list();
                 	break;
-                case RegChoice.수강_신청: 
+                case CouChoice.수강_신청:
+                	cc.register();
                 	break;
-                case RegChoice.수강_취소: 
+                case CouChoice.수강_신청_수정:
+                	cc.update();
                 	break;
-                case RegChoice.돌아가기 :
+                case CouChoice.수강_취소: 
+                	cc.cancle();
+                	break;
+                case CouChoice.돌아가기 :
                 stopFlag = true;
                 break;
                 }

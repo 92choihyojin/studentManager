@@ -10,6 +10,8 @@ import dao.LessonDAO;
 
 
 public class LeesonInterfaceImpl implements LeesonInterface {
+	
+	//학과 목록
 	public ArrayList<LessonDAO> selectLessonAll(Connection conn) {
 		ArrayList<LessonDAO> lessonDAOList = null;
 		try {
@@ -34,7 +36,7 @@ public class LeesonInterfaceImpl implements LeesonInterface {
 		}
 		return lessonDAOList;
 	}
-	
+	// 학과 등록
 	public boolean insert(Connection conn, LessonDAO dao) {
 		try {
 			String insertSQL = "INSERT INTO LESSON VALUES (LESSON_SEQ.nextval, ?, ?)";
@@ -55,7 +57,7 @@ public class LeesonInterfaceImpl implements LeesonInterface {
 		}
 		return false;
 	}
-	
+	// 학과번호 검색
 	public LessonDAO searchByNo(Connection conn, LessonDAO dao) {
 		LessonDAO lessonDAO = null;
 		try {
@@ -80,7 +82,7 @@ public class LeesonInterfaceImpl implements LeesonInterface {
 		return lessonDAO;
 	}
 	
-	
+	//학과 수정
 	public boolean update(Connection conn, LessonDAO dao) {
 		try {
 			String updateSQL = "UPDATE LESSON SET ABBRE = ?, NAME = ? WHERE NO = ?";
@@ -102,6 +104,7 @@ public class LeesonInterfaceImpl implements LeesonInterface {
 		}
 		return false;
 	}
+	// 학과 삭제
 	public boolean delete(Connection conn, LessonDAO dao) {
 		try {
 			String deleteSQL = "DELETE FROM LESSON WHERE NO = ?";
@@ -122,6 +125,7 @@ public class LeesonInterfaceImpl implements LeesonInterface {
 		}
 		return false;
 	}
+	// 학과명 검색
 	public ArrayList<LessonDAO> searchByName(Connection conn, String i_name) {
 		ArrayList<LessonDAO> lessonDAOList = null;
 		try {

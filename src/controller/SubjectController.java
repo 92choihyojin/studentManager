@@ -17,6 +17,7 @@ public class SubjectController {
 		ConnectionService connectionService = new ConnectionService();
 		
 		
+		System.out.println();
 		System.out.println("과목 전체 리스트");
 		ArrayList<SubjectDAO> SubDAOList = ss.selectSubAll(connectionService.getConn());
 		if (SubDAOList.size() == 0) {
@@ -31,7 +32,7 @@ public class SubjectController {
 		}
 	}
 
-	// 과목 입력
+	// 과목 등록
 	public void register() throws Exception {
 		Scanner scan = new Scanner(System.in);
 		SubjectDAO sd = new SubjectDAO();
@@ -50,7 +51,8 @@ public class SubjectController {
 		sd.setNum(num);
 		sd.setName(name);
 
-		//ss.insert(num, name);
+		
+		ss.insert(connectionService.getConn(), sd);
 
 		System.out.println();
 		System.out.println("과목 전체 리스트");
@@ -63,13 +65,11 @@ public class SubjectController {
 		Scanner scan = new Scanner(System.in);
 
 		ConnectionService connectionService = new ConnectionService();
-		SubjectDAO dao = new SubjectService().selectSubOne(connectionService.getConn(), 12);
-		System.out.println(dao);
 
 		SubjectDAO sd = new SubjectDAO();
 		SubjectService ss = new SubjectService();
 		
-		int no=0; // 일련번호
+		int no= 0; // 일련번호
 		String num=""; // 과목 번호
 		String name=""; // 과목 이름
 
@@ -77,20 +77,31 @@ public class SubjectController {
 		list();
 		System.out.println();
 
-		System.out.println("수정할 과목번호 입력");
-		System.out.print("과목번호 : ");
-		num = scan.nextLine();
+		System.out.println("수정할 일련번호 입력");
+		System.out.print("일련번호 : ");
+		no = Integer.parseInt(scan.nextLine());
 
 		sd.setNo(no);
-		sd.setNum(num);
-		sd.setName(name);
-		boolean count = ss.update(connectionService.getConn(), sd);
+//		sd.setNum(num);
+//		sd.setName(name);
+		SubjectDAO dao = ss.selectSubOne(connectionService.getConn(), sd.getNo());
+		
+		System.out.println("수정할 과목번호 입력 (" + dao.getNum()+") :");
+		num = scan.nextLine();
+		System.out.println("수정할 이름 입력 (" + dao.getName()+") :");
+		name = scan.nextLine();
+		
+		dao.setNum((num.equals("")) ? dao.getNum() : num);
+		dao.setName((name.equals("")) ? dao.getName() : name);
+		
+		
+		boolean count = ss.update(connectionService.getConn(), dao);
 
 		if (count) {
+			System.out.println("과목정보 수정완료");
+		} else {
 			System.out.println("과목정보 수정 오류발생 조치바람");
 			return;
-		} else {
-			System.out.println("과목정보 수정완료");
 		}
 
 		System.out.println();
@@ -107,19 +118,19 @@ public class SubjectController {
 		SubjectService ss = new SubjectService();
 		ConnectionService connectionService = new ConnectionService();
 		
-		String num; // 일련번호
+		int no; // 일련번호
 		list();
 		System.out.println();
 
-		System.out.println("삭제할 과목번호 입력");
-		System.out.print("과목번호 : ");
-		num = scan.nextLine();
-		sd.setNum(num);
+		System.out.println("삭제할 일련번호 입력");
+		System.out.print("일련번호 : ");
+		no = Integer.parseInt(scan.nextLine());
+		sd.setNo(no);
 		boolean count = ss.delete(connectionService.getConn(),sd);
 		if (count) {
-			System.out.printf("%s 번호 삭제성공 \n", num);
+			System.out.printf("%s 번호 삭제성공 \n", no);
 		} else {
-			System.out.printf("%s 번호 삭제 문제발생 조치바람\n", num);
+			System.out.printf("%s 번호 삭제 문제발생 조치바람\n", no);
 		}
 		System.out.println();
 		System.out.println("과목 전체 리스트");
@@ -127,18 +138,19 @@ public class SubjectController {
 		System.out.println();
 	}
 
-	// 과목 검색 관리
+	// 과목 검색 관리///////////////////////// 손봐야함
 	public static void Search() {
 		SubjectDAO sd = new SubjectDAO();
 		SubjectService ss = new SubjectService();
 		ConnectionService connectionService = new ConnectionService();
-		System.out.println("검색할 과목 'name'을 입력해주세요 : ");
+		System.out.println("검색할 과목명을 입력해주세요");
+		System.out.print("ex) 한글자 ' A '만 검색 가능 : ");
 		String name = scan.nextLine();
 
 		
 		ArrayList<SubjectDAO> SubDAOList = ss.selectByName(connectionService.getConn(), name);
 		if (SubDAOList.size() <= 0 || SubDAOList == null) {
-			System.out.println("책정보 검색에 오류가 발생했습니다.");
+			System.out.println("과목정보 검색에 오류가 발생했습니다.");
 			return;
 		}
 		for (SubjectDAO data : SubDAOList) {

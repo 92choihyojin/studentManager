@@ -31,8 +31,9 @@ public class SubjectService {
 	public boolean delete(Connection conn, SubjectDAO dao) {
 		return new SubInterfaceImpl().delete(conn, dao);
 	}
+	// 검색
 	public ArrayList<SubjectDAO> selectByName(Connection conn, String name) {
-		return new SubInterfaceImpl().selectByName(conn, name);
+		return new SubInterfaceImpl().searchByName(conn, name);
 	}
 
 }

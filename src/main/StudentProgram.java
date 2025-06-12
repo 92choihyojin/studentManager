@@ -38,7 +38,7 @@ public class StudentProgram {
 						break;
 						
 					case MenuChoice.수강_관리 :
-						RegSelect.menuChoiceReg();
+						CouSelect.menuChoiceReg();
 						break;
 						
 					case MenuChoice.EXIT :
@@ -53,6 +53,7 @@ public class StudentProgram {
 		}
 	}// main end
 
+	//번호선택
 	public static int noSel(int limit) { // 파라미터(parameter) 매개변수
 		Scanner scan = new Scanner(System.in);
 

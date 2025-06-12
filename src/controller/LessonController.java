@@ -109,7 +109,7 @@ public class LessonController {
 		} else if (lessonDAOList.size() >= 1) {
 			System.out.println("|순번| 약어 | 학과명 ");
 			for (LessonDAO data : lessonDAOList) {
-				System.out.printf("%d | %s | %s\n", data.getNo(), data.getAbbre(), data.getName());
+				System.out.printf("| %d |  %s | %s\n", data.getNo(), data.getAbbre(), data.getName());
 			}
 		}
 	}

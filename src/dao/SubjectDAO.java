@@ -35,7 +35,7 @@ public class SubjectDAO {
 	}
 	@Override
 	public String toString() {
-		return "과목 [일련번호: " + no + "/ 과목번호: " + num + "/ 과목명: " + name + "]";
+		return "과목 [ 일련번호: " + no + " / 과목번호: " + num + " / 과목명: " + name + " ]";
 	}
 
 	
