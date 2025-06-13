@@ -41,7 +41,6 @@ public class LeesonInterfaceImpl implements LeesonInterface {
 		try {
 			String insertSQL = "INSERT INTO LESSON VALUES (LESSON_SEQ.nextval, ?, ?)";
 			PreparedStatement pstmt = conn.prepareStatement(insertSQL);
-			// 5. 사람을(DML) 탑승시켜 보내고, 오라클에서 실행(executeQuery)시키고 , 실행된 사람 다시 태우고 도착한다.
 			pstmt.setString(1, dao.getAbbre());
 			pstmt.setString(2, dao.getName());
 			

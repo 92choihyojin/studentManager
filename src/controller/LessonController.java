@@ -24,7 +24,7 @@ public class LessonController {
 		} else if (lessonDAOList.size() >= 1) {
 			System.out.println("|순번| 약어 | 학과명 ");
 			for (LessonDAO data : lessonDAOList) {
-				System.out.printf("%d | %s | %s\n", data.getNo(), data.getAbbre(), data.getName());
+				System.out.printf("| %d | %s | %s\n", data.getNo(), data.getAbbre(), data.getName());
 			}
 		}
 	}
@@ -54,7 +54,7 @@ public class LessonController {
 		LessonDAO ldao = new LessonDAO();
 
 		this.list();
-		System.out.print("수정할 학과번호입력 : ");
+		System.out.print("수정할 순번입력 : ");
 		ldao.setNo(Integer.parseInt(scan.nextLine()));
 
 		ldao = lessonService.searchByNo(connectionService.getConn(), ldao);
@@ -79,7 +79,7 @@ public class LessonController {
 		LessonDAO ldao = new LessonDAO();
 
 		this.list();
-		System.out.print("삭제할 학과번호입력 : ");
+		System.out.print("삭제할 순번입력 : ");
 		ldao.setNo(Integer.parseInt(scan.nextLine()));
 
 		ldao = lessonService.searchByNo(connectionService.getConn(), ldao);

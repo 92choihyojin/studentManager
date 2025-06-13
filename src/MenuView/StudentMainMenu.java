@@ -57,7 +57,7 @@ public class StudentMainMenu {
         System.out.println("' 수강 ' 을(를) 관리합니다."); 
         System.out.println("해당 번호를 입력하세요."); 
         System.out.println("1. 수강 신청 목록"); 
-        System.out.println("2. 수강 등록"); 
+        System.out.println("2. 수강 신청"); 
         System.out.println("3. 수강 취소"); 
         System.out.println("4. 돌아가기"); 
 	}

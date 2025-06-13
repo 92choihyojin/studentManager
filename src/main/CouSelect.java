@@ -5,8 +5,7 @@ import java.util.regex.Pattern;
 
 import MenuView.StudentMainMenu;
 import ViewChoice.CouChoice;
-import ViewChoice.StuChoice;
-import controller.CouseController;
+import controller.CourseController;
 
 public class CouSelect {
 	public static Scanner scan = new Scanner(System.in);
@@ -19,7 +18,7 @@ public class CouSelect {
         	try {
         		StudentMainMenu.menuShowMeReg();
         		
-        		CouseController cc = new CouseController();
+        		CourseController cc = new CourseController();
         		
         		choice = noSel(5);
         		
@@ -31,12 +30,12 @@ public class CouSelect {
                 case CouChoice.수강_신청:
                 	cc.register();
                 	break;
-                case CouChoice.수강_신청_수정:
+                case CouChoice.수강_취소:
                 	cc.update();
                 	break;
-                case CouChoice.수강_취소: 
-                	cc.cancle();
-                	break;
+//                case CouChoice.수강_취소: 
+//                	cc.cancle();
+//                	break;
                 case CouChoice.돌아가기 :
                 stopFlag = true;
                 break;

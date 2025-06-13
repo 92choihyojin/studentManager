@@ -35,7 +35,6 @@ public class StuSelect {
 
 				case StuChoice.학생_정보_수정:
 					st.update();
-					stopFlag = true;
 					break;
 
 				case StuChoice.학생_정보_삭제:
