@@ -22,7 +22,7 @@ public class LessonController {
 			System.out.println("학과전체리스트 에러발생");
 			return;
 		} else if (lessonDAOList.size() >= 1) {
-			System.out.println("|순번| 악어 | 학과명 ");
+			System.out.println("|순번| 약어 | 학과명 ");
 			for (LessonDAO data : lessonDAOList) {
 				System.out.printf("%d | %s | %s\n", data.getNo(), data.getAbbre(), data.getName());
 			}
