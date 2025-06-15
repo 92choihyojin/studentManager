@@ -45,21 +45,21 @@
 
 
 
-### ✅ 사원 테이블 (EMPLOYEE_TBL)
+### ✅ 학생 테이블 (STUDENT_TBL)
 | 컬럼명        | 한글명     | 데이터 타입 | 크기 | Null 허용 | 유일키 | 키  | 비고                       |
 |---------------|------------|--------------|------|-----------|--------|-----|----------------------------|
-| emp_no        | 사원번호   | INT          | -    | N         | Y      | PK  | 사원 번호                  |
-| password      | 비밀번호   | VARCHAR      | 20   | N         |        |     | 비밀번호                   |
-| emp_name      | 이름       | VARCHAR      | 10   | N         |        |     | 사원 이름                  |
-| position      | 직급       | VARCHAR      | 10   | N         |        |     | 직급 (ex. 사원, 대리 등)   |
-| birth_date    | 생년월일   | DATE         | -    | N         |        |     | 생년월일 (YYYY-MM-DD)      |
-| join_date     | 입사일     | DATE         | -    | N         |        |     | 입사일자 (YYYY-MM-DD)      |
-| phone_number  | 전화번호   | VARCHAR      | 20   | Y         |        |     | 전화번호 (010-0000-0000)   |
-| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
-| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
-| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
-| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
-| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
+| NO            | 일련번호   | INT          | -    | N         | Y      | PK  | 사원 번호                  |
+| NUM           | 학번       | VARCHAR      | 20   | N         |        |     | 비밀번호                   |
+| NAME          | 이름       | VARCHAR      | 10   | N         |        |     | 사원 이름                  |
+| ID            | 직급       | VARCHAR      | 10   | N         |        |     | 직급 (ex. 사원, 대리 등)   |
+| PASSWD        | 생년월일   | DATE         | -    | N         |        |     | 생년월일 (YYYY-MM-DD)      |
+| LESSON_NO     | 입사일     | DATE         | -    | N         |        |     | 입사일자 (YYYY-MM-DD)      |
+| BIRTHDAY      | 전화번호   | VARCHAR      | 20   | Y         |        |     | 전화번호 (010-0000-0000)   |
+| PHONE         | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
+| ADDRESS       | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
+| EMAIL         | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
+| REGISTER_DATE | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
+
 ---
 ### ✅ 사원별 연차 휴가 테이블 (EMPLOYEE_LEAVE_BALANCE_TBL)
 
