@@ -60,6 +60,23 @@
 | EMAIL         | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
 | REGISTER_DATE | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
 
+
+### ✅ 학생 테이블 (STUDENT_TBL)
+
+| 컬럼명         | 한글명       | 데이터 타입 | 크기 | Null 허용 | 유일키 | 키  | 비고                           |
+|----------------|--------------|--------------|------|-----------|--------|-----|--------------------------------|
+| NO             | 일련번호     | NUMBER       | -    | N         |        | PK  | 기본 키, 내부 식별자           |
+| NUM            | 학번         | VARCHAR2     | 8    | N         |        |     | 학생 고유 학번                 |
+| NAME           | 이름         | VARCHAR2     | 12   | N         |        |     | 학생 이름                      |
+| ID             | 아이디       | VARCHAR2     | 12   | N         |        |     | 로그인용 ID                    |
+| PASSWD         | 비밀번호     | VARCHAR2     | 12   | N         |        |     | 로그인용 비밀번호              |
+| LESSON_NO      | 수강과목번호 | NUMBER       | -    | N         |        | FK  | 외래 키 (수업 테이블 참조)     |
+| BIRTHDAY       | 생년월일     | DATE         | -    | N         |        |     | YYYY-MM-DD 형식                |
+| PHONE          | 전화번호     | VARCHAR2     | 15   | N         |        |     | 010-XXXX-XXXX 형식             |
+| ADDRESS        | 주소         | VARCHAR2     | 80   | N         |        |     | 학생 거주지 주소               |
+| EMAIL          | 이메일       | VARCHAR2     | 40   | N         |        |     | 사용자 이메일 주소             |
+| REGISTER_DATE  | 등록일       | DATE         | -    | Y         |        |     | 기본값 SYSDATE                 |
+
 ---
 ### ✅ 사원별 연차 휴가 테이블 (EMPLOYEE_LEAVE_BALANCE_TBL)
 
