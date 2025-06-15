@@ -92,8 +92,7 @@
 
 '수강 취소' 신청목록에 있는 수강을 순번으로 취소를 할 수 있도록 함
 
-![Uploading image.png…]()
-
+![image](https://github.com/user-attachments/assets/5138b8ee-0df9-4329-943b-9ac6a5eecb8b)
 
 ---
 
