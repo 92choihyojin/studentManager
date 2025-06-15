@@ -56,7 +56,10 @@
 | join_date     | 입사일     | DATE         | -    | N         |        |     | 입사일자 (YYYY-MM-DD)      |
 | phone_number  | 전화번호   | VARCHAR      | 20   | Y         |        |     | 전화번호 (010-0000-0000)   |
 | is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
-
+| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
+| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
+| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
+| is_admin      | 관리자 여부| BOOLEAN      | -    | N         |        |     | 관리자 여부 (Y/N)          |
 ---
 ### ✅ 사원별 연차 휴가 테이블 (EMPLOYEE_LEAVE_BALANCE_TBL)
 
