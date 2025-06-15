@@ -27,7 +27,10 @@
 | 문서화 도구   | Google Docs (문서, 스프레드시트, 프레젠테이션)             |
 | 형상 관리     | Git                                                       |
 
+---
+![image](https://github.com/user-attachments/assets/9547aede-9f18-4869-9295-19ab121b9dbb)
 
+---
 ## 📌 주요 기능
 
 ### 👤 학생_관리
@@ -43,6 +46,8 @@
 
 '학생 검색' 학생의 이름 한 글자만 입력을 해도 입력한 한 글자만 해당되면 모두 찾는다.
 
+![image](https://github.com/user-attachments/assets/57ed1d80-71c7-480f-8f61-1ccda300d275)
+
 ---
 
 ### 📚 과목_관리
@@ -56,6 +61,9 @@
 '과목 삭제' 해당 과목을 삭제할때는 일련번호를 입력하여 해당 과목을 삭제한다.
 
 '과목 검색' 과목명의 한글자만 입력 하더라도 해당 과목명의 모두를 보여준다.
+
+![image](https://github.com/user-attachments/assets/3840a4b4-2138-44ec-8820-d5bc8671e8e6)
+
 
 ---
 
@@ -71,6 +79,9 @@
 
 '학과 검색' 헉과명의 한글자만 입력 하더라도 해당 학과명의 모두를 보여준다.
 
+![image](https://github.com/user-attachments/assets/3b9da464-a3bb-4b1f-8426-b74752aab52e)
+
+
 ---
 
 ### 🏫 수강_관리
@@ -80,6 +91,9 @@
 '수강 등록' 수강을 등록 할 수 있도록 함
 
 '수강 취소' 신청목록에 있는 수강을 순번으로 취소를 할 수 있도록 함
+
+![Uploading image.png…]()
+
 
 ---
 
