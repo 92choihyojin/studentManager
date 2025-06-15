@@ -28,6 +28,12 @@
 | 형상 관리     | Git                                                       |
 
 ---
+### TABLE - ERD 형성
+
+![image](https://github.com/user-attachments/assets/bf66c21e-c9a8-4949-a339-dd23995c3bb7)
+
+
+---
 ![image](https://github.com/user-attachments/assets/9547aede-9f18-4869-9295-19ab121b9dbb)
 
 ---
