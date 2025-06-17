@@ -43,9 +43,9 @@ public class SubjectController {
 		String name; // 과목명
 
 		System.out.println("과목 정보 입력");
-		System.out.print("과목 번호 : ");
+		System.out.print("과목 : ");
 		num = scan.nextLine();
-		System.out.print("과목명  : ");
+		System.out.print("과목명 : ");
 		name = scan.nextLine();
 
 		sd.setNum(num);
@@ -86,7 +86,7 @@ public class SubjectController {
 //		sd.setName(name);
 		SubjectDAO dao = ss.selectSubOne(connectionService.getConn(), sd.getNo());
 		
-		System.out.println("수정할 과목번호 입력 (" + dao.getNum()+") :");
+		System.out.println("수정할 과목 입력 (" + dao.getNum()+") :");
 		num = scan.nextLine();
 		System.out.println("수정할 이름 입력 (" + dao.getName()+") :");
 		name = scan.nextLine();
@@ -144,7 +144,7 @@ public class SubjectController {
 		SubjectService ss = new SubjectService();
 		ConnectionService connectionService = new ConnectionService();
 		System.out.println("검색할 과목명을 입력해주세요");
-		System.out.print("ex) 한글자 ' A '만 검색 가능 : ");
+		System.out.print("ex) '정','정보' 검색 가능 : ");
 		String name = scan.nextLine();
 
 		
