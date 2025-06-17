@@ -28,6 +28,12 @@
 | 형상 관리     | Git                                                       |
 
 ---
+### TABLE - ERD 형성
+
+![image](https://github.com/user-attachments/assets/bf66c21e-c9a8-4949-a339-dd23995c3bb7)
+
+
+---
 ![image](https://github.com/user-attachments/assets/9547aede-9f18-4869-9295-19ab121b9dbb)
 
 ---
@@ -92,8 +98,7 @@
 
 '수강 취소' 신청목록에 있는 수강을 순번으로 취소를 할 수 있도록 함
 
-![Uploading image.png…]()
-
+![image](https://github.com/user-attachments/assets/5138b8ee-0df9-4329-943b-9ac6a5eecb8b)
 
 ---
 
