@@ -23,7 +23,7 @@
 | 개발 언어     | Java                                                         |
 | JDK 버전     | JDK 21                                                       |
 | 데이터베이스 | CSV                                                          |
-| 개발 툴      | Eclipse                                                      |
+| 개발 툴      | Eclipse ,Oracle                                             |
 | 문서화 도구   | Google Docs (문서, 스프레드시트, 프레젠테이션)             |
 | 형상 관리     | Git                                                       |
 
